@@ -1,9 +1,26 @@
 {
-  "name": "@repo/typescript-config",
+  "name": "@dcdavidev/typescript-config",
   "version": "0.0.0",
-  "private": true,
+  "description": "Typescript configuration files for every needs",
+  "keywords": [
+    "typescript",
+    "tsconfig",
+    "configuration"
+  ],
+  "private": false,
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "files": [
+    "*.json"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./base.json": "./base.json",
+    "./check.json": "./check.json",
+    "./nextjs.json": "./nextjs.json",
+    "./node-library.json": "./node-library.json",
+    "./react-library.json": "./react-library.json"
   }
 }

@@ -1,0 +1,81 @@
+{
+  "name": "@dcdavidev/eslint-plugin",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A shareable ESlint plugin",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-plugin",
+    "linter",
+    "code-style"
+  ],
+  "homepage": "https://github.com/dcdavidev/spellbook#readme",
+  "bugs": {
+    "url": "https://github.com/dcdavidev/spellbook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/spellbook.git",
+    "directory": "packages/eslint-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Davide Di Criscito",
+    "email": "info@dcdavidev.me",
+    "url": "https://dcdavidev.me"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js",
+      "default": "./dist/configs/index.js"
+    },
+    "./configs/recommended": {
+      "types": "./dist/configs/recommended.d.ts",
+      "import": "./dist/configs/recommended.js",
+      "default": "./dist/configs/recommended.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint:types": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@eslint/css": "^2.0.1",
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^2.1.1",
+    "@eslint/markdown": "^9.0.0",
+    "@eslint/shell": "^0.1.2",
+    "globals": "^17.14.0",
+    "typescript-eslint": "^8.74.0"
+  },
+  "devDependencies": {
+    "@dcdavidev/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@typescript/native": "catalog:",
+    "eslint": "^10.15.0",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "eslint": "^10.15.0",
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

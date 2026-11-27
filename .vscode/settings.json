@@ -13,7 +13,8 @@
     "typescript",
     "typescriptreact",
     "json",
-    "jsonc"
+    "jsonc",
+    "shellscript"
   ],
   // Monorepo / Turborepo: automatically resolves configuration paths for each workspace package
   "eslint.workingDirectories": [{ "mode": "auto" }],

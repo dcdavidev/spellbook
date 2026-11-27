@@ -8,13 +8,30 @@
       "outputs": ["dist/**"]
     },
     "lint": {
-      "dependsOn": ["lint:types", "//#lint:spelling", "//#fmt:check"]
+      "dependsOn": [
+        "lint:types",
+        "//#lint:workspace",
+        "//#lint:spelling",
+        "//#fmt:check"
+      ]
     },
     "lint:fix": {
-      "dependsOn": ["lint:types", "//#lint:spelling", "//#fmt"]
+      "dependsOn": [
+        "lint:types",
+        "//#lint:spelling",
+        "//#lint:workspace:fix",
+        "//#fmt"
+      ]
     },
     "lint:types": {
-      "dependsOn": ["^build", "^lint:types"]
+      "dependsOn": ["^build"]
+    },
+    "//#lint:workspace": {
+      "inputs": ["$TURBO_DEFAULT$", "eslint.config.*"],
+      "cache": true
+    },
+    "//#lint:workspace:fix": {
+      "cache": false
     },
     "//#lint:spelling": {
       "inputs": ["$TURBO_DEFAULT$", "cspell.config.*", ".cspell*"],
@@ -25,6 +42,7 @@
       "cache": true
     },
     "//#fmt": {
+      "dependsOn": ["//#lint:workspace:fix"],
       "cache": false
     },
     "dev": {

@@ -10,15 +10,20 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
     "lint:spelling": "cspell --no-progress --no-summary .",
-    "lint:types": "turbo run lint:types"
+    "lint:types": "turbo run lint:types",
+    "lint:workspace": "eslint --no-warn-ignored .",
+    "lint:workspace:fix": "eslint --no-warn-ignored --fix ."
   },
   "devDependencies": {
     "@dcdavidev/cspell-config": "workspace:*",
+    "@dcdavidev/eslint-plugin": "workspace:*",
     "@dcdavidev/prettier-config": "workspace:*",
     "@ianvs/prettier-plugin-sort-imports": "catalog:",
     "@prettier/plugin-xml": "catalog:",
     "@typescript/native": "catalog:",
     "cspell": "catalog:",
+    "eslint": "^10.15.0",
+    "jiti": "^2.7.0",
     "prettier": "catalog:",
     "prettier-plugin-packagejson": "catalog:",
     "prettier-plugin-sh": "catalog:",

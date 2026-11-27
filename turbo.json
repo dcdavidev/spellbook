@@ -8,15 +8,24 @@
       "outputs": ["dist/**"]
     },
     "lint": {
-      "dependsOn": ["lint:types", "//#lint:spelling"]
+      "dependsOn": ["lint:types", "//#lint:spelling", "//#fmt:check"]
+    },
+    "lint:fix": {
+      "dependsOn": ["lint:types", "//#lint:spelling", "//#fmt"]
     },
     "lint:types": {
-      "dependsOn": ["^lint:types"]
+      "dependsOn": ["^build", "^lint:types"]
     },
     "//#lint:spelling": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$"],
+      "inputs": ["$TURBO_DEFAULT$", "cspell.config.*", ".cspell*"],
       "cache": true
+    },
+    "//#fmt:check": {
+      "inputs": ["$TURBO_DEFAULT$", ".prettierrc*", "prettier.config.*"],
+      "cache": true
+    },
+    "//#fmt": {
+      "cache": false
     },
     "dev": {
       "cache": false,

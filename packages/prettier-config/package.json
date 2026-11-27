@@ -1,0 +1,76 @@
+{
+  "name": "@dcdavidev/prettier-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A shareable Prettier configuration with plugins for Astro, Prisma, Tailwind, and more",
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "formatter",
+    "code-style"
+  ],
+  "homepage": "https://github.com/dcdavidev/spellbook#readme",
+  "bugs": {
+    "url": "https://github.com/dcdavidev/spellbook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/spellbook.git",
+    "directory": "packages/prettier-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Davide Di Criscito",
+    "email": "info@dcdavidev.me",
+    "url": "https://dcdavidev.me"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js",
+      "default": "./dist/configs/index.js"
+    },
+    "./configs/recommended": {
+      "types": "./dist/configs/recommended.d.ts",
+      "import": "./dist/configs/recommended.js",
+      "default": "./dist/configs/recommended.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint:types": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "catalog:",
+    "@prettier/plugin-xml": "catalog:",
+    "prettier-plugin-packagejson": "catalog:",
+    "prettier-plugin-sh": "catalog:",
+    "prettier-plugin-toml": "catalog:"
+  },
+  "devDependencies": {
+    "@dcdavidev/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@typescript/native": "catalog:",
+    "prettier": "catalog:"
+  },
+  "peerDependencies": {
+    "prettier": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

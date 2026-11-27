@@ -1,1 +1,1 @@
-export { default } from "@dcdavidev/cspell-config";
+export { default } from '@dcdavidev/cspell-config';

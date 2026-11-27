@@ -95,7 +95,29 @@ export const python = [
 ] as const;
 
 /**
- * Miscellaneous developer toolchains, IDEs, AI agents, and system dotfiles.
+ * AI coding agents, assistant configurations, and LLM instruction files.
+ */
+export const aiAgents = [
+  "**/.agents/**",
+  "**/.claude/**",
+  "**/.cursor/**",
+  "**/.gemini/**",
+  "**/.windsurf/**",
+  "**/.roo/**",
+  "**/.aider*",
+  "**/.cursorrules",
+  "**/.cursorignore",
+  "**/.clinerules",
+  "**/.roorules",
+  "**/AGENTS.md",
+  "**/CLAUDE.md",
+  "**/GEMINI.md",
+  "**/.github/copilot-instructions.md",
+  "**/.github/instructions/**",
+] as const;
+
+/**
+ * Miscellaneous developer toolchains, IDEs, and system dotfiles.
  */
 export const toolchains = [
   "**/.git/**",
@@ -109,7 +131,6 @@ export const toolchains = [
   "**/.prettier*",
   "**/.nx/**",
   "**/.cspell/**",
-  "**/.cursor/**",
   "**/.history/**",
   "**/.sass-cache/**",
   "**/.gradle/**",
@@ -120,13 +141,7 @@ export const toolchains = [
   "**/.direnv/**",
   "**/.astro/**",
   "**/.codacy/**",
-  "**/.gemini/**",
-  "**/.agents/**",
-  "**/.claude/**",
-  "**/.windsurf/**",
-  "**/.aider*",
   "**/.changeset/**",
-  "**/AGENTS.md",
 ] as const;
 
 /**
@@ -145,14 +160,9 @@ export const windows = [
 ] as const;
 
 /**
- * Specific project artifacts, documentation guides, and template files.
+ * Specific project artifacts and template files.
  */
-export const misc = [
-  "**/connect.lock",
-  ".github/instructions/**",
-  "**/*.hbs",
-  "**/*.mustache",
-] as const;
+export const misc = ["**/connect.lock", "**/*.hbs", "**/*.mustache"] as const;
 
 /**
  * Combined list of all standard ignore glob patterns.
@@ -164,6 +174,7 @@ export const all: readonly string[] = [
   ...rust,
   ...go,
   ...python,
+  ...aiAgents,
   ...toolchains,
   ...windows,
   ...misc,
@@ -176,6 +187,7 @@ export const LOCK_FILES_IGNORE_PATHS: typeof lockFiles = lockFiles;
 export const RUST_IGNORE_PATHS: typeof rust = rust;
 export const GO_IGNORE_PATHS: typeof go = go;
 export const PYTHON_IGNORE_PATHS: typeof python = python;
+export const AI_AGENTS_IGNORE_PATHS: typeof aiAgents = aiAgents;
 export const TOOLCHAINS_IGNORE_PATHS: typeof toolchains = toolchains;
 export const WINDOWS_IGNORE_PATHS: typeof windows = windows;
 export const MISC_IGNORE_PATHS: typeof misc = misc;
@@ -186,6 +198,7 @@ export const ignorePaths: string[] = [...all];
  * Type of the unified `ignores` dictionary.
  */
 export interface IgnoresDictionary {
+  readonly aiAgents: typeof aiAgents;
   readonly all: typeof all;
   readonly core: typeof core;
   readonly go: typeof go;
@@ -202,6 +215,7 @@ export interface IgnoresDictionary {
  * Dictionary of all ignore recipe categories and complete collections.
  */
 export const ignores: IgnoresDictionary = {
+  aiAgents: aiAgents,
   all: all,
   core: core,
   go: go,

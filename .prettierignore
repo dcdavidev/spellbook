@@ -1,0 +1,41 @@
+# Build outputs & TypeScript artifacts
+**/dist/
+**/build/
+**/coverage/
+**/*.tsbuildinfo
+**/*.d.ts
+**/*.map
+**/*.min.*
+
+# Package manager & Monorepo caches
+**/node_modules/
+**/.turbo/
+**/.nx/
+**/.pnpm-store/
+**/.eslintcache
+**/.cspell/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lock
+bun.lockb
+
+# AI Agents & LLM instructions
+**/.agents/
+**/.claude/
+**/.cursor/
+**/.gemini/
+**/.windsurf/
+**/.aider*
+**/AGENTS.md
+**/CLAUDE.md
+
+# Generated docs & legal
+**/*LICENSE*
+**/CHANGELOG.md
+
+# OS & Logs
+**/*.log
+**/.DS_Store
+Thumbs.db
+*:Zone.Identifier*

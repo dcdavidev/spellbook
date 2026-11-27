@@ -5,5 +5,11 @@
     "isolatedDeclarations": false,
     "noEmit": true
   },
-  "include": ["${configDir}/src/**/*", "${configDir}/tests/**/*", "${configDir}/scripts/**/*", "${configDir}/*.config.ts"]
+  "include": [
+    "${configDir}/src/**/*",
+    "${configDir}/tests/**/*",
+    "${configDir}/scripts/**/*",
+    "${configDir}/*.config.ts"
+  ],
+  "exclude": ["${configDir/node_modules"]
 }

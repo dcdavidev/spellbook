@@ -26,6 +26,7 @@
 
   // CSpell
   "cSpell.enabled": true,
+  "cSpell.import": ["${workspaceFolder}/cspell.config.mjs"],
 
   // Language Specific Formatters
   "[typescript]": {

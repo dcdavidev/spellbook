@@ -1,14 +1,19 @@
 {
   "name": "spellbook",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write .",
-    "lint:types": "turbo run lint:types"
+    "lint:types": "turbo run lint:types",
+    "lint:spelling": "cspell --no-progress --no-summary ."
   },
   "devDependencies": {
+    "@dcdavidev/cspell-config": "workspace:*",
+    "@typescript/native": "catalog:",
+    "cspell": "catalog:",
     "prettier": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:"

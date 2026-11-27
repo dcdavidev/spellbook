@@ -1,17 +1,22 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
-  "ui": "tui",
+  "ui": "stream",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["src/**"]
+      "outputs": ["dist/**"]
     },
     "lint": {
-       "dependsOn": ["lint:types"]
+      "dependsOn": ["lint:types", "//#lint:spelling"]
     },
     "lint:types": {
       "dependsOn": ["^lint:types"]
+    },
+    "//#lint:spelling": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "cache": true
     },
     "dev": {
       "cache": false,

@@ -110,14 +110,41 @@ export const allOverrides: OverrideEntry[] = [
  * Dictionary of individual and aggregated file override presets.
  */
 export interface PrettierOverrides {
+  /**
+   * JSON parser override for Commitizen rc files (`.czrc`).
+   */
   readonly czrc: OverrideEntry;
+  /**
+   * Override for JSON with Comments (`.jsonc`) files without trailing commas.
+   */
   readonly jsonc: OverrideEntry;
+  /**
+   * Override for TOML configuration files with an expanded print width.
+   */
   readonly toml: OverrideEntry;
+  /**
+   * XML parser override for SVG, XML, plist, project files, and manifests.
+   */
   readonly xml: OverrideEntry;
+  /**
+   * Astro parser override for `.astro` files.
+   */
   readonly astro: OverrideEntry;
+  /**
+   * Svelte parser override for `.svelte` files.
+   */
   readonly svelte: OverrideEntry;
+  /**
+   * Override entries using built-in parsers, for the base preset.
+   */
   readonly base: OverrideEntry[];
+  /**
+   * Override entries included in the recommended preset.
+   */
   readonly recommended: OverrideEntry[];
+  /**
+   * All override entries, for the comprehensive preset.
+   */
   readonly all: OverrideEntry[];
 }
 

@@ -30,6 +30,9 @@ const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8')) as {
  * Extended ESLint plugin type with strongly-typed configurations dictionary.
  */
 export type Plugin = ESLint.Plugin & {
+  /**
+   * Shareable flat configurations exposed by the plugin, keyed by name.
+   */
   configs: typeof configs;
 };
 

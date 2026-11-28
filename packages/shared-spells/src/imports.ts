@@ -305,31 +305,109 @@ export const relative: readonly string[] = ['../', './', String.raw`^\.?\.\/`];
  * Type of the unified `imports` dictionary.
  */
 export interface ImportsDictionary {
+  /**
+   * Static media and font asset file patterns.
+   */
   readonly assets: typeof assets;
+  /**
+   * Server and backend application frameworks.
+   */
   readonly backendFrameworks: typeof backendFrameworks;
+  /**
+   * Express, Koa, and Fastify backend middleware and logging libraries.
+   */
   readonly backendMiddlewares: typeof backendMiddlewares;
+  /**
+   * Node.js built-in modules and `node:` prefix.
+   */
   readonly builtinModules: typeof builtinModules;
+  /**
+   * CSS-in-JS, styling utilities, class merging, and animation libraries.
+   */
   readonly cssInJs: typeof cssInJs;
+  /**
+   * Data fetching, API clients, and GraphQL libraries.
+   */
   readonly dataFetching: typeof dataFetching;
+  /**
+   * Dotenv environment configuration packages.
+   */
   readonly dotenv: typeof dotenv;
+  /**
+   * Environment variable module aliases (`@env`).
+   */
   readonly env: typeof env;
+  /**
+   * Fullstack meta-frameworks (Next.js, Remix, SvelteKit, Nuxt, Gatsby).
+   */
   readonly fullstackFrameworks: typeof fullstackFrameworks;
+  /**
+   * Icon sets and component icon packages.
+   */
   readonly icons: typeof icons;
+  /**
+   * Application internal path aliases (`@/`, `~/`, `#/`).
+   */
   readonly internalAliases: typeof internalAliases;
+  /**
+   * JSON file patterns.
+   */
   readonly json: typeof json;
+  /**
+   * Monorepo workspace package scope prefixes.
+   */
   readonly monorepo: typeof monorepo;
+  /**
+   * Alias for `separator`: a blank line between import groups.
+   */
   readonly newline: typeof newline;
+  /**
+   * Short alias for `separator`: a blank line between import groups.
+   */
   readonly nl: typeof nl;
+  /**
+   * React Native, Expo, and mobile application navigation libraries.
+   */
   readonly reactNativeExpo: typeof reactNativeExpo;
+  /**
+   * React ecosystem packages including router, helmet, and internationalization.
+   */
   readonly reactPackages: typeof reactPackages;
+  /**
+   * Relative file path patterns (`../`, `./`).
+   */
   readonly relative: typeof relative;
+  /**
+   * Empty string separator: a blank line between import groups.
+   */
   readonly separator: typeof separator;
+  /**
+   * Side-effect imports identifier pattern.
+   */
   readonly sideEffects: typeof sideEffects;
+  /**
+   * Client-side state management libraries.
+   */
   readonly stateManagement: typeof stateManagement;
+  /**
+   * Stylesheet and preprocessor file patterns (`.css`, `.scss`, `.less`).
+   */
   readonly styles: typeof styles;
+  /**
+   * Unit, integration, and end-to-end testing frameworks.
+   */
   readonly testing: typeof testing;
+  /**
+   * Third-party dependencies matching general npm module patterns.
+   */
   readonly thirdParty: typeof thirdParty;
+  /**
+   * Core frontend UI frameworks (React, Vue, Svelte, Angular, Solid).
+   */
   readonly uiFrameworks: typeof uiFrameworks;
+  /**
+   * UI component and design system libraries.
+   */
   readonly uiLibraries: typeof uiLibraries;
 }
 

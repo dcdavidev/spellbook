@@ -294,6 +294,9 @@ importers:
 
   packages/eslint-plugin:
     dependencies:
+      '@dcdavidev/shared-spells':
+        specifier: workspace:*
+        version: link:../shared-spells
       '@eslint/css':
         specifier: ^2.0.1
         version: 2.0.1

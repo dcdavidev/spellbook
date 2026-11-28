@@ -1,3 +1,4 @@
+import { ignores } from '@dcdavidev/shared-spells';
 import css from '@eslint/css';
 import js from '@eslint/js';
 import json from '@eslint/json';
@@ -9,15 +10,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export const recommended: Linter.Config[] = defineConfig([
-  globalIgnores([
-    '**/node_modules/',
-    '**/dist/',
-    '**/build/',
-    '**/coverage/',
-    '**/.turbo/',
-    '**/.next/',
-    '**/.vercel/',
-  ]),
+  globalIgnores([...ignores.all]),
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     plugins: { js },

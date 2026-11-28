@@ -18,7 +18,6 @@
     "@dcdavidev/cspell-config": "workspace:*",
     "@dcdavidev/eslint-plugin": "workspace:*",
     "@dcdavidev/prettier-config": "workspace:*",
-    "@ianvs/prettier-plugin-sort-imports": "catalog:",
     "@prettier/plugin-xml": "catalog:",
     "@typescript/native": "catalog:",
     "cspell": "catalog:",

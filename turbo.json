@@ -12,6 +12,7 @@
         "lint:types",
         "//#lint:workspace",
         "//#lint:spelling",
+        "//#lint:workspace",
         "//#fmt:check"
       ]
     },
@@ -27,10 +28,12 @@
       "dependsOn": ["^build"]
     },
     "//#lint:workspace": {
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", "eslint.config.*"],
       "cache": true
     },
     "//#lint:workspace:fix": {
+      "dependsOn": ["^build"],
       "cache": false
     },
     "//#lint:spelling": {
@@ -38,11 +41,12 @@
       "cache": true
     },
     "//#fmt:check": {
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".prettierrc*", "prettier.config.*"],
       "cache": true
     },
     "//#fmt": {
-      "dependsOn": ["//#lint:workspace:fix"],
+      "dependsOn": ["^build", "//#lint:workspace:fix"],
       "cache": false
     },
     "dev": {

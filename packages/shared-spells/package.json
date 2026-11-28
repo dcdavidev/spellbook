@@ -36,6 +36,11 @@
       "types": "./dist/ignores.d.ts",
       "import": "./dist/ignores.js",
       "default": "./dist/ignores.js"
+    },
+    "./imports": {
+      "types": "./dist/imports.d.ts",
+      "import": "./dist/imports.js",
+      "default": "./dist/imports.js"
     }
   },
   "main": "./dist/index.js",

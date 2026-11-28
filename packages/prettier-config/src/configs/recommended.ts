@@ -3,6 +3,7 @@
  */
 
 import type { Config } from 'prettier';
+
 import { recommendedOverrides } from '../overrides.js';
 import { recommendedPlugins } from '../plugins.js';
 import { baseRules } from '../rules.js';

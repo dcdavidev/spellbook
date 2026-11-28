@@ -1,8 +1,18 @@
+/**
+ * @file Entry point of `@dcdavidev/eslint-plugin`: exposes the plugin object
+ * and its shareable flat configurations.
+ */
+
 import { readFileSync } from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
+
 import type { ESLint } from 'eslint';
+
 import { configs } from './configs/index.js';
 
+/**
+ * Absolute path to the package `package.json`, resolved from this module.
+ */
 const packageJsonPath = fileURLToPath(
   new URL('../package.json', import.meta.url),
 );

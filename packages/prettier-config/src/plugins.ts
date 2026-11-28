@@ -18,8 +18,6 @@ export const plugins = {
   prisma: 'prettier-plugin-prisma',
   properties: 'prettier-plugin-properties',
   sh: 'prettier-plugin-sh',
-  sortImports: '@ianvs/prettier-plugin-sort-imports',
-  'sort-imports': '@ianvs/prettier-plugin-sort-imports',
   sql: 'prettier-plugin-sql',
   svelte: 'prettier-plugin-svelte',
   tailwind: 'prettier-plugin-tailwindcss',
@@ -46,7 +44,6 @@ export const recommendedPlugins: readonly PluginValue[] = [
   plugins.sh,
   plugins.toml,
   plugins.xml,
-  plugins.sortImports,
 ];
 
 /**

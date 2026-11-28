@@ -42,6 +42,11 @@
       "types": "./dist/configs/recommended.d.ts",
       "import": "./dist/configs/recommended.js",
       "default": "./dist/configs/recommended.js"
+    },
+    "./configs/nextjs": {
+      "types": "./dist/configs/nextjs.d.ts",
+      "import": "./dist/configs/nextjs.js",
+      "default": "./dist/configs/nextjs.js"
     }
   },
   "main": "./dist/index.js",
@@ -57,11 +62,19 @@
   },
   "dependencies": {
     "@dcdavidev/shared-spells": "workspace:*",
+    "@eslint-react/eslint-plugin": "^5.30.6",
     "@eslint/css": "^2.0.1",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.1.1",
     "@eslint/markdown": "^9.0.0",
     "@eslint/shell": "^0.1.2",
+    "@next/eslint-plugin-next": "^16.4.6",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsdoc": "^65.5.7",
+    "eslint-plugin-node-dependencies": "^2.3.0",
+    "eslint-plugin-prettier": "^5.5.7",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "eslint-plugin-unicorn": "^80.0.0",
     "globals": "^17.14.0",
     "typescript-eslint": "^8.74.0"
   },

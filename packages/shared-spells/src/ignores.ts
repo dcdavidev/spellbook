@@ -181,18 +181,64 @@ export const all: readonly string[] = [
   ...misc,
 ];
 
-// Uppercase aliases for conventional matching
+/**
+ * Uppercase alias for {@link core}.
+ */
 export const CORE_IGNORE_PATHS: typeof core = core;
+
+/**
+ * Uppercase alias for {@link node}.
+ */
 export const NODE_IGNORE_PATHS: typeof node = node;
+
+/**
+ * Uppercase alias for {@link lockFiles}.
+ */
 export const LOCK_FILES_IGNORE_PATHS: typeof lockFiles = lockFiles;
+
+/**
+ * Uppercase alias for {@link rust}.
+ */
 export const RUST_IGNORE_PATHS: typeof rust = rust;
+
+/**
+ * Uppercase alias for {@link go}.
+ */
 export const GO_IGNORE_PATHS: typeof go = go;
+
+/**
+ * Uppercase alias for {@link python}.
+ */
 export const PYTHON_IGNORE_PATHS: typeof python = python;
+
+/**
+ * Uppercase alias for {@link aiAgents}.
+ */
 export const AI_AGENTS_IGNORE_PATHS: typeof aiAgents = aiAgents;
+
+/**
+ * Uppercase alias for {@link toolchains}.
+ */
 export const TOOLCHAINS_IGNORE_PATHS: typeof toolchains = toolchains;
+
+/**
+ * Uppercase alias for {@link windows}.
+ */
 export const WINDOWS_IGNORE_PATHS: typeof windows = windows;
+
+/**
+ * Uppercase alias for {@link misc}.
+ */
 export const MISC_IGNORE_PATHS: typeof misc = misc;
+
+/**
+ * Uppercase alias for {@link all}.
+ */
 export const ALL_IGNORE_PATHS: readonly string[] = all;
+
+/**
+ * Mutable copy of {@link all}, for tools that expect a `string[]`.
+ */
 export const ignorePaths: string[] = [...all];
 
 /**

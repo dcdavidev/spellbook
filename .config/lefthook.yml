@@ -2,9 +2,12 @@
 # Documentation: https://lefthook.dev/configuration/
 #
 # Skip every hook for one command: LEFTHOOK=0 git commit ...
+# Skip one job: LEFTHOOK_EXCLUDE=cspell git commit ...
 
 assert_lefthook_installed: true
 
+# Fix and check the staged files before each commit. The jobs run in order so
+# that Prettier formats what ESLint fixed, and spelling is checked last.
 pre-commit:
   piped: true
   jobs:
@@ -14,9 +17,38 @@ pre-commit:
     - name: 'prettier'
       run: 'pnpm exec prettier --ignore-unknown --write {staged_files}'
       stage_fixed: true
+    - name: 'cspell'
+      run: 'pnpm exec cspell --no-progress --no-summary --no-must-find-files {staged_files}'
+      fail_text: 'Fix the misspelling or add the word to the CSpell dictionary.'
 
+# Check the commit message against the Conventional Commits rules.
 commit-msg:
   jobs:
     - name: 'commitlint'
       run: 'pnpm exec commitlint --edit {1} --verbose'
       fail_text: 'Use Conventional Commits, for example "feat: add a page".'
+
+# Run the full lint (ESLint, types, formatting and spelling) before pushing.
+# Turbo caches the results, so unchanged packages are not checked again.
+pre-push:
+  jobs:
+    - name: 'lint'
+      run: 'pnpm lint'
+      fail_text: 'Run "pnpm lint:fix" and fix the remaining errors.'
+
+# Reinstall dependencies when a pull or merge changes the lock file.
+post-merge:
+  jobs:
+    - name: 'install'
+      files: 'git diff --name-only HEAD@{1} HEAD'
+      glob: 'pnpm-lock.yaml'
+      run: 'pnpm install'
+
+# Reinstall dependencies when switching to a branch with a different lock file.
+# {1} and {2} are the previous and new HEAD; {3} is 1 for a branch checkout.
+post-checkout:
+  jobs:
+    - name: 'install'
+      run: >-
+        [ "{3}" != 1 ] || git diff --quiet {1} {2} -- pnpm-lock.yaml ||
+        pnpm install

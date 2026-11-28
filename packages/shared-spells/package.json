@@ -32,6 +32,21 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./commit-types": {
+      "types": "./dist/commit-types.d.ts",
+      "import": "./dist/commit-types.js",
+      "default": "./dist/commit-types.js"
+    },
+    "./discover-workspace-scopes": {
+      "types": "./dist/discover-workspace-scopes.d.ts",
+      "import": "./dist/discover-workspace-scopes.js",
+      "default": "./dist/discover-workspace-scopes.js"
+    },
+    "./get-workspace-scopes-description": {
+      "types": "./dist/get-workspace-scopes-description.d.ts",
+      "import": "./dist/get-workspace-scopes-description.js",
+      "default": "./dist/get-workspace-scopes-description.js"
+    },
     "./ignores": {
       "types": "./dist/ignores.d.ts",
       "import": "./dist/ignores.js",
@@ -41,6 +56,11 @@
       "types": "./dist/imports.d.ts",
       "import": "./dist/imports.js",
       "default": "./dist/imports.js"
+    },
+    "./workspace-scopes": {
+      "types": "./dist/workspace-scopes.d.ts",
+      "import": "./dist/workspace-scopes.js",
+      "default": "./dist/workspace-scopes.js"
     }
   },
   "main": "./dist/index.js",

@@ -1,0 +1,74 @@
+{
+  "name": "@dcdavidev/commitlint-config",
+  "version": "0.0.0",
+  "private": false,
+  "description": "A shareable Commitlint configuration enforcing conventional commits with workspace-aware scopes",
+  "keywords": [
+    "commitlint",
+    "commitlint-config",
+    "conventional-commits",
+    "git",
+    "commit"
+  ],
+  "homepage": "https://github.com/dcdavidev/spellbook#readme",
+  "bugs": {
+    "url": "https://github.com/dcdavidev/spellbook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/spellbook.git",
+    "directory": "packages/commitlint-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Davide Di Criscito",
+    "email": "info@dcdavidev.me",
+    "url": "https://dcdavidev.me"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./prompt": {
+      "types": "./dist/prompt.d.ts",
+      "import": "./dist/prompt.js",
+      "default": "./dist/prompt.js"
+    },
+    "./rules": {
+      "types": "./dist/rules.d.ts",
+      "import": "./dist/rules.js",
+      "default": "./dist/rules.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint:types": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "catalog:",
+    "@commitlint/types": "catalog:",
+    "@dcdavidev/shared-spells": "workspace:*"
+  },
+  "devDependencies": {
+    "@dcdavidev/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@typescript/native": "catalog:"
+  },
+  "peerDependencies": {
+    "@commitlint/cli": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@dcdavidev/shared-spells",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Shared building blocks for spellbook configs, such as standard ignore glob patterns",
+  "keywords": [
+    "spellbook",
+    "ignores",
+    "glob",
+    "shared-config"
+  ],
+  "homepage": "https://github.com/dcdavidev/spellbook#readme",
+  "bugs": {
+    "url": "https://github.com/dcdavidev/spellbook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/spellbook.git",
+    "directory": "packages/shared-spells"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Davide Di Criscito",
+    "email": "info@dcdavidev.me",
+    "url": "https://dcdavidev.me"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./ignores": {
+      "types": "./dist/ignores.d.ts",
+      "import": "./dist/ignores.js",
+      "default": "./dist/ignores.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint:types": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@dcdavidev/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@typescript/native": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

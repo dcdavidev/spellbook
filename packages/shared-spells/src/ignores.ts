@@ -12,6 +12,7 @@ export const core = [
   '**/*.min.*',
   '**/*.map',
   '**/*.tsbuildinfo',
+  '**/*.d.ts',
   '**/.cache/**',
   '**/.temp/**',
   '**/.tmp/**',

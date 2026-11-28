@@ -3,8 +3,8 @@
  */
 
 import type { CSpellSettings } from '@cspell/cspell-types';
+import { ignores } from '@dcdavidev/shared-spells';
 import { DICTIONARIES } from '../dictionaries.js';
-import { ignores } from '../ignores.js';
 import { words } from '../words.js';
 
 export const recommended: CSpellSettings = {

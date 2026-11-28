@@ -271,6 +271,10 @@ importers:
         version: '@typescript/typescript6@6.0.2'
 
   packages/cspell-config:
+    dependencies:
+      '@dcdavidev/shared-spells':
+        specifier: workspace:*
+        version: link:../shared-spells
     devDependencies:
       '@cspell/cspell-types':
         specifier: 'catalog:'
@@ -358,6 +362,18 @@ importers:
       prettier:
         specifier: 'catalog:'
         version: 3.9.6
+
+  packages/shared-spells:
+    devDependencies:
+      '@dcdavidev/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.6.11
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
 
   packages/typescript-config: {}
 
